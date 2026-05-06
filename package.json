@@ -1,0 +1,25 @@
+{
+  "name": "exhibition-3d",
+  "version": "1.0.0",
+  "description": "太极云境·非遗康护",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "three": "^0.161.0",
+    "@tweenjs/tween.js": "^23.1.0",
+    "lil-gui": "^0.19.0",
+    "element-plus": "^2.4.4",
+    "@element-plus/icons-vue": "^2.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.6"
+  }
+}
+
