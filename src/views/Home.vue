@@ -53,7 +53,10 @@ import PageModal from '@/components/PageModal.vue'
 import RichTextModal from '@/components/RichTextModal.vue'
 
 const sceneRef = ref(null)
-const modelPath = ref('/models/exhibit.glb')
+const modelBaseUrl = import.meta.env.VITE_MODEL_BASE_URL?.replace(/\/+$/, '')
+const modelPath = ref(
+  modelBaseUrl ? `${modelBaseUrl}/exhibit.glb` : '/models/exhibit.glb'
+)
 const viewMode = ref('external') // external, internal
 const currentFloor = ref(1)
 const showExhibitModal = ref(false)
@@ -63,6 +66,12 @@ const selectedPageItem = ref(null)
 const showRichTextModal = ref(false)
 const selectedRichTextItem = ref(null)
 const isModelLoaded = ref(false)
+
+if (modelBaseUrl) {
+  console.log('[Model] 使用云端模型地址:', modelPath.value)
+} else {
+  console.log('[Model] 未配置 VITE_MODEL_BASE_URL，回退本地模型地址:', modelPath.value)
+}
 
 /**
  * 通用弹窗打开逻辑：
